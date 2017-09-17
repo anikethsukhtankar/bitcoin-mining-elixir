@@ -1,0 +1,9 @@
+{application,project1,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"project1"},
+              {modules,['Elixir.BitcoinMining.Main',
+                        'Elixir.BitcoinMining.Server',
+                        'Elixir.BitcoinMining.Worker']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {extra_applications,[logger]}]}.
