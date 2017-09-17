@@ -24,7 +24,9 @@ asukhtankaruhkmdgxs9_   000078b0df1c217cdcb76c5969ca454ef85b5a429bbf5ba7174a0608
 
 ## Coin with most zeroes (7) : 
 
+```elixir
 asukhtankarfvvgdssixg   000000036115cffa23dfb4a961224471cea9bdeba989893125e848e3bee98a51
+```
 
 ## Largest number of working machines on which the code was run
 
