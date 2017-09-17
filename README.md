@@ -12,7 +12,7 @@ The goal of this project is to use Elixir and the actor model to build a good so
 ## Sample Output
 
 The following output was generated for command ./project1 4
-'''
+'''elixir
 asukhtankarbweo0yjers   0000997c5f2ce5350e4f477f8a92241d13702ba5ceb0912d31cbb2b740e6bc83
 asukhtankaro8jte89knr   00000931828e4579624bc583eee55c63818d209a173dfc77e8e63f69db6cdb17
 asukhtankard6zc_v9l2t   00009c77fecec0f76a5907ef53759f727ba120792098498e1297987a179ec2d1
