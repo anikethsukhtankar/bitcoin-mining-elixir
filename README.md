@@ -1,13 +1,14 @@
-# Bitcoin Mining using Elixir COP5615 - Distributed Operating Systems Principles Project 1
+# Bitcoin Mining using Elixir 
 
+COP5615 - Distributed Operating Systems Principles Project 1
 Group Members : Shikha Mehta, Aniketh Sukhtankar (UF ID 7819 9584)
 
 The goal of this project is to use Elixir and the actor model to build a good solution to the bitcoin mining problem that runs well on multi-core machines.
 
 
-# Size of the work unit 
+## Size of the work unit 
 
-# Sample Output
+## Sample Output
 
 The following output was generated for command ./project1 4
 
@@ -25,13 +26,13 @@ asukhtankarhuf6gojawe   000016eaaf8bfd33434946fc919a593a5b29afe3ed10994458306f3a
 asukhtankarxgnft2dkys   0000f78bb45ab01dfafb357a71b35e10b05f86ab51834114a39c376473e93868
 asukhtankarnj8wd5sk2q   000068cc1184ae2d24d0db7fb8c0026b3ab8b239d4e42a1aed0b1d98886b268b
 
-# Running Time
+## Running Time
 
-# Coin with most zeroes (7) : 
+## Coin with most zeroes (7) : 
 
 asukhtankarfvvgdssixg   000000036115cffa23dfb4a961224471cea9bdeba989893125e848e3bee98a51
 
-# Largest number of working machines on which the code was run
+## Largest number of working machines on which the code was run
 
 The code was simultaneously run on 4 machines with one functioning as server and the other 3 as workers.
 
