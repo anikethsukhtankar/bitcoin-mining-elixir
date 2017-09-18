@@ -9,7 +9,7 @@ The goal of this project is to use Elixir and the actor model to build a good so
 
 ## Size of the work unit 
 
-The size of work unit handles by every worker process and well as the main server varies dynamically with the number of logical processors available to the program which is determined using the command System.schedulers_online().
+The size of work unit handled by every worker process as well as the main server process varies dynamically with the number of logical processors available to the program which is determined using the command System.schedulers_online().
 
 ## Sample Output
 
