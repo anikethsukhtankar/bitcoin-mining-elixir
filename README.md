@@ -70,7 +70,7 @@ This will install all needed packages and build the project1 application file.
     
     eg. escript project1 4
 
-Starts the app, passing in the k value while the console begins printing on independent lines, the input string and the corresponding SHA256 hash separated by a TAB, for each of the bitcoins found that meet the criteria. The input string prefixed by the gatorlink ID "asukhtankar" as per the requirement mentioned.
+Starts the app, passing in the k value while the console begins printing on independent lines, the input string and the corresponding SHA256 hash separated by a TAB, for each of the bitcoins found that meet the criteria. The input string has been prefixed by the gatorlink ID "asukhtankar" as per the requirement mentioned.
 
 #### Run the app on a worker
 
