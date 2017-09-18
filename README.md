@@ -2,7 +2,7 @@
 
 COP5615 - Distributed Operating Systems Principles Project 1
 
-Group Members : Shikha Mehta, Aniketh Sukhtankar (UF ID 7819 9584)
+Group Members : Shikha Mehta (UF ID 4851 9256), Aniketh Sukhtankar (UF ID 7819 9584)
 
 The goal of this project is to use Elixir and the actor model to build a good solution to the bitcoin mining problem that runs well on multi-core machines.
 
@@ -25,9 +25,9 @@ asukhtankaruhkmdgxs9_   000078b0df1c217cdcb76c5969ca454ef85b5a429bbf5ba7174a0608
 ## Running Time
 
 ```elixir
-   real -> 0m36.472s
-   user -> 2m16.925s
-   syst -> 0m1.725s
+   real -> 2m50.530s
+   user -> 6m35.256s
+   sys  -> 3m41.872s
 ```
 
 ## Coin with most zeroes (7) : 
@@ -40,15 +40,62 @@ asukhtankarfvvgdssixg   000000036115cffa23dfb4a961224471cea9bdeba989893125e848e3
 
 The code was simultaneously run on 4 machines with one functioning as server and the other 3 as workers.
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+
+#### Erlang
+
+Please use Erlang >= 20.0, available at <https://www.erlang.org/downloads>.
+
+#### Elixir
+
+To install elixir on a Mac, `brew install elixir` (you may need to `brew update` first).
+
+Alternatively, you can follow [these instructions](http://elixir-lang.org/install.html).
+
+### Running
+
+#### App setup
+
+    $ mix escript.build
+
+This will install all needed packages and build the project1 application file.
+
+#### Run the app on server
+
+    $ escript project1 <k>
+    
+    eg. escript project1 4
+
+Starts the app, passing in the k value while the console begins printing on independent lines, the input string and the corresponding SHA256 hash separated by a TAB, for each of the bitcoins found that meet the criteria. The input string prefixed by the gatorlink ID "asukhtankar" as per the requirement mentioned.
+
+#### Run the app on a worker
+
+    $ escript project1 <server-ip>
+    
+    eg. escript project1 10.22.13.155
+
+The worker logic is invoked when the argument passed to project1 is a computer address or IP address of a server. This program then becomes a “worker” and contacts the server to get work. This second program will not display anything. All the coins found are displayed by the server. For eg. the above command will start a worker that contacts the elixir server hosted at 10.22.13.155 and participates into mining.The server is able to mine coins without any workers and accommodates multiple workers dynamically as they become available.
+
+
+## Built With
+
+* [Elixir](https://elixir-lang.org/) - Elixir is a dynamic, functional language designed for building scalable and maintainable applications.
+* [Visual Studio Code](https://code.visualstudio.com/) - Code Editor
+* [Github](https://github.com/anikethsukhtankar/bitcoin-mining-elixir/) - Dependency Management
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `bitcoinmining` to your list of dependencies in `mix.exs`:
+by adding `project1` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:bitcoinmining, "~> 0.1.0"}
+    {:project1, "~> 0.1.0"}
   ]
 end
 ```
