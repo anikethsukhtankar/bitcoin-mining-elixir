@@ -6,10 +6,10 @@ defmodule BitcoinMining.Server do
         k=String.to_integer(hd(parameter))
         server_id=spawn_link(fn() -> server_print() end)
         
-        # {:ok, pid} = Task.Supervisor.start_link()
-        # for _ <- 1..100 do
-        #     Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
-        # end
+        {:ok, pid} = Task.Supervisor.start_link()
+        for _ <- 1..100 do
+            Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
+        end
         spawn_remote(server_id,k)
         receive do: (_ -> :ok)
     end
