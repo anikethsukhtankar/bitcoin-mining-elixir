@@ -6,10 +6,10 @@ defmodule BitcoinMining.Server do
         k=String.to_integer(hd(parameter))
         server_id=spawn_link(fn() -> server_print() end)
         
-        {:ok, pid} = Task.Supervisor.start_link()
-        for _ <- 1..100 do
-            Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
-        end
+        # {:ok, pid} = Task.Supervisor.start_link()
+        # for _ <- 1..100 do
+        #     Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
+        # end
         spawn_remote(server_id,k)
         receive do: (_ -> :ok)
     end
@@ -20,8 +20,10 @@ defmodule BitcoinMining.Server do
                 {ip_tuple,_,_} = head
                 current_ip = to_string(:inet_parse.ntoa(ip_tuple))
                 if current_ip === "127.0.0.1" do
-                    if l != 1 do
+                    if l > 1 do
                         make_distributed(tail,l-1)
+                    else 
+                        IO.puts "Could not make current node distributed."
                     end
                 else
                     server_node_name = String.to_atom("server@" <> current_ip)
@@ -29,7 +31,7 @@ defmodule BitcoinMining.Server do
                     Node.set_cookie(server_node_name,:monster)
                 end
             rescue
-                _ -> if l != 1, do: make_distributed(tail,l-1), else: IO.puts "Could not make current node distributed."
+                _ -> if l > 1, do: make_distributed(tail,l-1), else: IO.puts "Could not make current node distributed."
             end
         end
     end
