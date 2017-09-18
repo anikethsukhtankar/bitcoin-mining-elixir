@@ -6,8 +6,8 @@ The goal of this project is to use Elixir and the actor model to build a good so
 
 ## Authors
 
-* **Shikha Mehta** - *UFID - 4851 9256* - [Github](https://github.com/Shikha2410)
-* **Aniketh Sukhtankar** - *UFID - 7819 9584* - [Github](https://github.com/anikethsukhtankar)
+* **Shikha Mehta** - *UF ID: 4851 9256* - [Github](https://github.com/Shikha2410)
+* **Aniketh Sukhtankar** - *UF ID: 7819 9584* - [Github](https://github.com/anikethsukhtankar)
 
 ## Size of the work unit 
 
@@ -40,7 +40,7 @@ asukhtankarfvvgdssixg   000000036115cffa23dfb4a961224471cea9bdeba989893125e848e3
 
 ## Largest number of working machines on which the code was run
 
-The code was simultaneously run on 4 machines with one functioning as server and the other 3 as workers.
+The code was simultaneously run on 8 machines with one functioning as server and the other 7 as workers.
 
 ## Getting Started
 
