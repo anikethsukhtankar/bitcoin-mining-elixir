@@ -6,8 +6,8 @@ The goal of this project is to use Elixir and the actor model to build a good so
 
 ## Authors
 
-* **Aniketh Sukhtankar** - *UFID - 7819 9584* - [Github](https://github.com/anikethsukhtankar)
 * **Shikha Mehta** - *UFID - 4851 9256* - [Github](https://github.com/Shikha2410)
+* **Aniketh Sukhtankar** - *UFID - 7819 9584* - [Github](https://github.com/anikethsukhtankar)
 
 ## Size of the work unit 
 
