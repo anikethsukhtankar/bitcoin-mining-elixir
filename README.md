@@ -2,10 +2,12 @@
 
 COP5615 - Distributed Operating Systems Principles Project 1
 
-Group Members : Shikha Mehta (UF ID 4851 9256), Aniketh Sukhtankar (UF ID 7819 9584)
-
 The goal of this project is to use Elixir and the actor model to build a good solution to the bitcoin mining problem that runs well on multi-core machines.
 
+## Authors
+
+* **Aniketh Sukhtankar** - *UFID - 7819 9584* - [Github](https://github.com/anikethsukhtankar)
+* **Shikha Mehta** - *UFID - 4851 9256* - [Github](https://github.com/Shikha2410)
 
 ## Size of the work unit 
 
@@ -99,8 +101,4 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/bitcoinmining](https://hexdocs.pm/bitcoinmining).
 
