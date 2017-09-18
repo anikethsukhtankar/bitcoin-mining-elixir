@@ -14,8 +14,8 @@ defmodule BitcoinMining.Worker do
     def talk_to_server() do
         {:ok, pid} = Task.Supervisor.start_link()
         logproc = System.schedulers_online()
-        receive do
-            {:sendk,k_value} -> k = k_value
+        k = receive do
+            {:sendk,k_value} -> k_value
         end
         :global.sync()
         for _ <- 1..logproc do
