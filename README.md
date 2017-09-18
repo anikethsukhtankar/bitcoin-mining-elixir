@@ -9,6 +9,8 @@ The goal of this project is to use Elixir and the actor model to build a good so
 
 ## Size of the work unit 
 
+The size of work unit handles by every worker process and well as the main server varies dynamically with the number of logical processors available to the program which is determined using the command System.schedulers_online().
+
 ## Sample Output
 
 The following output was generated for command ./project1 4
@@ -21,6 +23,12 @@ asukhtankaruhkmdgxs9_   000078b0df1c217cdcb76c5969ca454ef85b5a429bbf5ba7174a0608
 ```
 
 ## Running Time
+
+```elixir
+   real -> 0m36.472s
+   user -> 2m16.925s
+   syst -> 0m1.725s
+```
 
 ## Coin with most zeroes (7) : 
 
