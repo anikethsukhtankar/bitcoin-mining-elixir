@@ -4,13 +4,13 @@ defmodule BitcoinMining.Server do
         {:ok,iflist}=:inet.getif()
         make_distributed(Enum.reverse(iflist),length(iflist))
         k=String.to_integer(hd(parameter))
-        server_id=spawn_link(fn() -> server_print() end)
-        
+        server_id=spawn_link(fn() -> server_print(k) end)
+        :global.register_name(:serve,server_id)
         {:ok, pid} = Task.Supervisor.start_link()
-        for _ <- 1..100 do
+        logproc = System.schedulers_online()
+        for _ <- 1..logproc do
             Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
         end
-        spawn_remote(server_id,k)
         receive do: (_ -> :ok)
     end
 
@@ -36,29 +36,16 @@ defmodule BitcoinMining.Server do
         end
     end
     
-    def spawn_remote(s_id,k) do
-        empty?(Node.list)
-        remotep_id=Node.spawn(List.last(Node.list()),fn() -> miner(s_id,k) end)    
-        Process.monitor(remotep_id)
-        receive do: (_ -> spawn_remote(s_id,k))
-    end
-
-    def empty?([]) do
-        empty?(Node.list)
-    end
-    def empty?(list) when is_list(list) do 
-        nil
-    end
-
-    def server_print() do
+    def server_print(k) do
       receive do
+          {:getk,client} -> send(client, {:sendk,k})
 	      msg -> IO.puts msg
       end
-      server_print()
+      server_print(k)
     end
 
     def miner(s_id,k) do
-      msgt = "asukhtankar" <> randomizer()
+      msgt = "asukhtankar" <> randomizer(9)
       temp = :crypto.hash(:sha256, msgt) |> Base.encode16 |> String.downcase
       if(String.slice(temp,0,k) === String.duplicate("0",k)) do
         send(s_id, msgt <> "\t" <> temp)
@@ -66,8 +53,8 @@ defmodule BitcoinMining.Server do
       miner(s_id,k)
     end
     
-    def randomizer do
-      :crypto.strong_rand_bytes(10) |> Base.url_encode64 |> binary_part(0, 10) |> String.downcase
+    def randomizer(l) do
+      :crypto.strong_rand_bytes(l) |> Base.url_encode64 |> binary_part(0, l) |> String.downcase
     end
 
   end
