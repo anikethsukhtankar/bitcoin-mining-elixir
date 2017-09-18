@@ -7,7 +7,7 @@ defmodule BitcoinMining.Server do
         server_id=spawn_link(fn() -> server_print(k) end)
         :global.register_name(:serve,server_id)
         {:ok, pid} = Task.Supervisor.start_link()
-        logproc = System.schedulers_online()
+        logproc = 2*System.schedulers_online()
         for _ <- 1..logproc do
             Task.Supervisor.async(pid,fn() -> miner(server_id,k) end)
         end
