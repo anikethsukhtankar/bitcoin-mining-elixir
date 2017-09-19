@@ -11,7 +11,7 @@ The goal of this project is to use Elixir and the actor model to build a good so
 
 ## Size of the work unit 
 
-The size of work unit handled by every worker process depends on the number of logical processors (logproc) available on the machine they are run. We spawn 2 * logproc processes/machine for mining bitcoins, where logproc is determined using the command System.schedulers_online(). We are also running Task.Supervisor on each worker process, ensuring that they are restarted in case of failure.
+In this program, the worker receives a request for mining without an upper limit on the number of coins to be mined. We spawn 2*logproc worker processes / node for mining bitcoins, where logproc is the number of logical processors available on a machine. To ensure that all worker processes stay functional, we are also running Task.Supervisor on each worker process ensuring auto-restart in case of failure.
 
 ## Sample Output
 
